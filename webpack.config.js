@@ -8,13 +8,15 @@ const isDevelopment = process.env.NODE_ENV !== "production"
 
 module.exports = {
     mode: isDevelopment ? "development" : "production",
-    entry: {
-        react: path.resolve(__dirname, "src", "index.tsx"),
-        css: path.resolve(__dirname, "src/styles", "index.scss"),
-    },
+    entry: path.resolve(
+        __dirname,
+        "src",
+        isDevelopment ? "index.tsx" : "export.tsx"
+    ),
     output: {
-        filename: "[name].js",
+        filename: "index.js",
         path: path.resolve(__dirname, "dist"),
+        libraryTarget: "commonjs2",
     },
     module: {
         rules: [

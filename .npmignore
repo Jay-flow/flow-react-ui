@@ -1,0 +1,5 @@
+# Ignore everything
+*
+
+# Only publish index.js file
+!/dist/index.js
