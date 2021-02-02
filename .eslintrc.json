@@ -8,7 +8,13 @@
             "arrowFunctions": true
         }
     },
-    "plugins": ["@typescript-eslint", "prettier", "react", "react-hooks"],
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "react",
+        "react-hooks",
+        "jest"
+    ],
     "extends": [
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
@@ -23,7 +29,7 @@
         "react/prop-types": "off",
         "react-hooks/rules-of-hooks": "error",
         "react/react-in-jsx-scope": "off",
-        "react-hooks/exhaustive-deps": "warn", 
+        "react-hooks/exhaustive-deps": "warn",
         "prettier/prettier": [
             "error",
             {},
