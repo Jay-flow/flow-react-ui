@@ -8,9 +8,12 @@ const isDevelopment = process.env.NODE_ENV !== "production"
 
 module.exports = {
     mode: isDevelopment ? "development" : "production",
-    entry: path.resolve(__dirname, "src", "index.tsx"),
+    entry: {
+        react: path.resolve(__dirname, "src", "index.tsx"),
+        css: path.resolve(__dirname, "src/styles", "index.scss"),
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
     },
     module: {
@@ -33,6 +36,10 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: ["style-loader", "css-loader", "sass-loader"],
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.html$/,
