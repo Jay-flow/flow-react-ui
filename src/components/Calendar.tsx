@@ -8,7 +8,7 @@ const Calendar = (): JSX.Element => {
     const month = date.getMonth() + 1
     const firstDay = new Date(year, 3).getDay()
     const days = daysInMonth(month, year)
-    console.log(firstDay)
+    console.log(days)
     return <button>Hi</button>
 }
 
